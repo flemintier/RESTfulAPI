@@ -1,0 +1,16 @@
+{{ template "base" }}
+
+{{ define "content" }}
+
+	<h1>API</h1>
+	{{$docs := index .Docs "Docs"}}
+	<p>Documents :</p>
+	{{ range $index, $element := $docs }}
+		<p>Document {{ $index }} :</p>
+		<p>ID : {{ $element.ID }}, nom : {{ $element.Nom }}, description : {{ $element.Description }}</p>
+	{{ else }}
+		<!-- <p>Problème lors de la récupération des données</p> -->
+	{{ end }}
+	<!-- <p>Fin !!</p> -->
+
+{{ end }}
