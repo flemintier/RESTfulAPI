@@ -15,3 +15,5 @@ Création : POST "localhost:8080/post" avec de défini dans l'onglet Body puis r
 Récupération : GET "localhost:8080/{Nom}" (exemple : localhost:8080/Fab) pour récupérer le document ayant pour nom "Fab"
 
 Suppression : DELETE "localhost:8080/{Nom}" (exemple : localhost:8080/Fab) pour supprimer le document ayant pour nom "Fab"
+
+Dans les documents, pour le moment, le champ ID est incrémenté à chaque nouvel ajout par rapport au nombre de documents présents dans la liste, il n'est pas mis à jour à cas de suppression d'un document.
