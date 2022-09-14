@@ -15,6 +15,7 @@ import (
 // Déclarations de variables
 var appTmpl *config.TemplateConfig
 
+// Fonction d'initialisation de la variable grobales du template
 func CreateTemplates(app *config.TemplateConfig) {
 	appTmpl = app
 }
