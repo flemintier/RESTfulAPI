@@ -9,7 +9,6 @@ import (
 	"text/template"
 
 	"github.com/flemintier/RESTfulAPI/config"
-	"github.com/flemintier/RESTfulAPI/models"
 )
 
 // Déclarations de variables
@@ -21,7 +20,7 @@ func CreateTemplates(app *config.TemplateConfig) {
 }
 
 // Fonction qui va récupérer et exécuter les templates et afficher les données sur la page web
-func RenderTemplate(rw http.ResponseWriter, tmplName string, td *models.TemplateData) {
+func RenderTemplate(rw http.ResponseWriter, tmplName string, td *map[string]config.Doc) {
 	templateCache := appTmpl.TemplateCache
 
 	// templateCache["home.page.tmpl"]
@@ -40,7 +39,7 @@ func RenderTemplate(rw http.ResponseWriter, tmplName string, td *models.Template
 		return
 	}
 	// fmt.Println(buffer.String())
-	buffer.WriteTo(rw)
+	// buffer.WriteTo(rw)
 	json.NewEncoder(rw).Encode(*td)
 }
 
