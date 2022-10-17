@@ -7,7 +7,6 @@ import (
 	"strconv"
 
 	"github.com/flemintier/RESTfulAPI/config"
-	"github.com/flemintier/RESTfulAPI/internal/handlers"
 	"github.com/gorilla/mux"
 )
 
@@ -58,13 +57,9 @@ func postDocs(rw http.ResponseWriter, r *http.Request) {
 	// Création du nouveau document
 	doc = Creation(doc.Nom, doc.Description)
 
-	// json.NewEncoder(rw).Encode(doc)
 	// Ajout du nouveau document à la liste globale
 	DocConfig[strconv.Itoa(doc.ID)] = doc
 	json.NewEncoder(rw).Encode(DocConfig)
-	// docs := make(map[string][]config.Doc)
-	// docs["docs"] = DocConfig
-	// handlers.RenderTemplate(rw, "home", DocConfig)
 }
 
 // Fonction pour récupérer tous les documents
@@ -79,9 +74,6 @@ func getDocs(rw http.ResponseWriter, r *http.Request) {
 
 	doc := Recuperation(params["Nom"])
 	json.NewEncoder(rw).Encode(doc)
-	// docs := make(map[string][]config.Doc)
-	// docs["docs"] = DocConfig
-	// handlers.RenderTemplate(rw, "home", DocConfig)
 }
 
 // Fonction pour supprimer un document
@@ -90,5 +82,4 @@ func deleteDocs(rw http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 
 	Suppression(params["Nom"])
-	handlers.RenderTemplate(rw, "home", &DocConfig)
 }

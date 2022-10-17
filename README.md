@@ -12,7 +12,8 @@ Création : POST "localhost:8080/post" avec de défini dans l'onglet Body puis r
  )
  Cela permet d'ajouter un nouveau document à la liste en mémoire.
 
-Récupération : GET "localhost:8080/{Nom}" (exemple : localhost:8080/Fab) pour récupérer le document ayant pour nom "Fab"
+Récupération : 	GET "localhost:8080/{Nom}" (exemple : localhost:8080/Fab) pour récupérer le document ayant pour nom "Fab"
+				GET "localhost:8080/" pour récupérer tous les documents
 
 Suppression : DELETE "localhost:8080/{Nom}" (exemple : localhost:8080/Fab) pour supprimer le document ayant pour nom "Fab"
 
